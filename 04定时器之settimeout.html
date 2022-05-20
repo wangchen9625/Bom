@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 因为是window对象的函数,可以省略window
+        // 调用回调函数,可以直接是匿名函数, 可以是箭头函数  可以是自定义函数名称
+        // 第二个参数 timeout时间过后触发函数
+        // 最好给定时器加上一个标识符 如案例2
+        setTimeout(() => {
+            console.log('1111111');
+        }, 3000);
+
+        let timer2 = setTimeout(() => {
+            console.log('5000');
+        }, 5000);
+    </script>
+</body>
+</html>

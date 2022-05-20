@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="usr">
+    <input type="checkbox" name="" id="chbox">记住我
+    <script>
+        let usr = document.querySelector('.usr');
+        let cbox = document.querySelector('#chbox');
+        if(localStorage.getItem('username')){
+            usr.value = localStorage.getItem('username');
+            cbox.checked = true;
+        }
+        cbox.addEventListener('click',function(){
+            if(cbox.checked){
+                usr.value && localStorage.setItem('username',usr.value);
+            }else{
+                localStorage.removeItem('username');
+            }
+        })
+    </script>
+</body>
+</html>

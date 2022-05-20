@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(21, 19, 19);
+            color: cornsilk;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="hour">1</span>:
+    <span class="minute">2</span>:
+    <span class="second">3</span>
+    <script>
+        let h1 = document.querySelector('.hour');
+        let m1 = document.querySelector('.minute');
+        let s1 = document.querySelector('.second');
+        let input_time = new Date('2022-4-26 18:00:00');
+        countDown();//添加一次,防止页面刷新呈现初始状态1:2:3, 即防止抖动
+        setInterval(countDown,1000);
+        function countDown(){
+            let nowTime = new Date();
+            let times = (input_time - nowTime) / 1000;//剩余秒数
+            let h = parseInt(times/60 / 60 % 24);
+            h = h < 10 ? '0'+ h : h;
+            h1.innerHTML = h;
+            let m = parseInt(times% 3600 / 60);
+            m = m < 10? '0'+ m :m;
+            m1.innerHTML = m;
+            let s = parseInt(times % 60);
+            s = s < 10? '0'+ s: s;
+            s1.innerHTML = s;
+
+        }
+    </script>
+</body>
+
+</html>

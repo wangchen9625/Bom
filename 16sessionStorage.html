@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  -->
+    <input type="text" name="" id="text">
+    <button class="set">存储数据</button>
+    <button class="get">获得数据</button>
+    <button class="del">删除数据</button>
+    <button class="clear">清空数据</button>
+    <script>
+        // sessionStorage 生命周期,当前浏览器窗口
+        // 在同一个窗口下 数据可以共享
+        // localStrage 生命周期一直都在, 关闭了浏览器也在
+        // 浏览器多窗口 都可以使用这个数据
+        let ipt = document.querySelector('#text');
+        let set = document.querySelector('.set');
+        let get = document.querySelector('.get');
+        let del = document.querySelector('.del')
+        let clear = document.querySelector('.clear');
+        set.addEventListener('click', function () {
+
+            ipt.value && sessionStorage.setItem('user', ipt.value);
+
+        })
+        get.addEventListener('click', function () {
+            let username = sessionStorage.getItem('use3r');
+            username && alert(username);
+        })
+        // 清除指定 key 的数据
+        del.addEventListener('click',function(){
+            sessionStorage.removeItem('user');
+        })
+        clear.addEventListener('click',function(){
+            sessionStorage.setItem('test1', "hello");
+            sessionStorage.setItem('test2', "hello");
+            alert("要删除了");
+            sessionStorage.clear();
+        })
+    </script>
+</body>
+
+</html>

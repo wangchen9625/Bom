@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        //  window对象
+        //  全局变量,实际是window对象里面的一个属性
+        // 用let 声明的是局部变量 var 声明的是全局变量
+         var num = 3;
+         console.log(num);
+         console.log(window.num);
+
+        //  创建的函数,也是其中的属性
+        function fn(){
+            console.log(11);
+        }
+        fn();
+        window.fn();
+
+        console.dir(window);
+        //window中的属性,不要作为变量名, 比如说name
+     </script>
+</body>
+</html>

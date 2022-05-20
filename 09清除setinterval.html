@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="begin">开始定时器</button>
+    <button class="end">结束定时器</button> 
+    <script>
+        let bg = document.querySelector('.begin');
+        let ed = document.querySelector('.end');
+        let begintimer = null;//全局变量
+        bg.addEventListener('click',function(){
+            begintimer = setInterval(function(){
+                console.log('boom');
+            },1000);
+        })
+        ed.addEventListener('click',function(){
+            clearInterval(begintimer);
+        })
+    </script>
+
+</body>
+</html>
